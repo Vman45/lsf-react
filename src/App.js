@@ -1,18 +1,16 @@
-import React, { Component } from 'react'
-import './App.css'
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import 'App.css';
 
-import SearchBar from './components/search-bar'
-import Entries from './vocabulaire/entries'
+import Dictionary from 'components/Dictionary';
+import Dashboard from 'components/Dashboard';
 
-class App extends Component {
-  render() {
-    return (
-      <div id="top">
-        <SearchBar data-e2e="search-bar" />
-        <Entries />
-      </div>
-    )
-  }
+export default function App() {
+  return (
+    <Router>
+      <Dashboard />
+      <Route path="/dictionary" exact component={Dictionary} />
+      <Route path="/dashboard" exact component={Dashboard} />
+    </Router>
+  );
 }
-
-export default App
