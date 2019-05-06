@@ -1,9 +1,15 @@
 import React from 'react';
+import { Flex, Heading, Card, Text } from 'components/library';
 
 export default function Dashboard() {
   return (
-    <div data-e2e="dashboard">
-      <h1>Dashboard</h1>
-    </div>
+    <Flex alignItems="center" data-e2e="dashboard">
+      <Card width={1 / 2}>
+        <Heading>Hello</Heading>
+      </Card>
+      <Card width={1 / 2}>
+        <Text>Grid</Text>
+      </Card>
+    </Flex>
   );
 }
